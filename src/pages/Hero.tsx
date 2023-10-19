@@ -4,6 +4,7 @@ import ThemeButton from "../components/ThemeButton";
 import FotoMinha from "../assets/euCortado.jpg";
 import { Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+// @ts-ignore
 import useSound from "use-sound";
 import ryanSound from "../assets/ryan.mp4";
 
