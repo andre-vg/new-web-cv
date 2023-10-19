@@ -10,7 +10,7 @@ import ryanSound from "../assets/ryan.mp4";
 
 function Hero() {
   const [ryanGosling, setRyanGosling] = useState(false);
-  const [play, { stop }] = useSound(ryanSound, { volume: 0 });
+  const [play, { stop }] = useSound(ryanSound, { volume: 0.1 });
 
   useEffect(() => {
     if (ryanGosling) {
