@@ -22,7 +22,7 @@ function Hero() {
   return (
     <div
       id="Hero"
-      className="flex h-screen items-center justify-center gap-64 bg-wavesLight bg-cover dark:bg-waves"
+      className="flex h-screen items-center justify-center gap-48 bg-wavesLight bg-cover dark:bg-waves"
     >
       <m.div
         animate={{ y: [10, -10] }}
@@ -32,11 +32,13 @@ function Hero() {
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
-        className="flex flex-col gap-2"
+        className="flex w-3/4 flex-col gap-2 md:w-auto"
       >
-        <h1 className="text-4xl font-bold">My name is</h1>
-        <h1 className="text-center text-7xl font-bold">André Gonçalves</h1>
-        <h1 className="text-right text-2xl font-bold">& I am</h1>
+        <h1 className="text-2xl font-bold md:text-4xl">My name is</h1>
+        <h1 className="text-6xl text-center font-bold md:text-7xl">
+          André Gonçalves
+        </h1>
+        <h1 className="text-right text-xl font-bold md:text-2xl">& I am</h1>
         <TypeAnimation
           sequence={[
             'A Developer',
@@ -48,7 +50,7 @@ function Hero() {
           ]}
           repeat={Infinity}
           wrapper="h1"
-          className="text-7xl"
+          className="text-5xl md:text-7xl"
         />
       </m.div>
       <m.div
@@ -60,6 +62,7 @@ function Hero() {
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
+        className="hidden xl:block"
       >
         <Image
           src={FotoMinha}
