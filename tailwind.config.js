@@ -7,7 +7,12 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'waves': "url('/src/assets/waves.svg')",
+        'wavesLight': "url('/src/assets/waveswhite.svg')",
+      }
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
