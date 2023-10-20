@@ -1,8 +1,8 @@
-import { Button } from "@nextui-org/react";
-import { CgDarkMode } from "react-icons/cg";
+import { Button } from '@nextui-org/react';
+import { CgDarkMode } from 'react-icons/cg';
 function ThemeButton() {
   const handleTheme = () => {
-    document.getElementById("theme")?.classList.toggle("dark");
+    document.getElementById('theme')?.classList.toggle('dark');
   };
 
   return (

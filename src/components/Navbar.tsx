@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Navbar as Nav,
   NavbarBrand,
@@ -9,46 +9,46 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@nextui-org/react";
-import { CgDarkMode } from "react-icons/cg";
-import { BiMoon, BiSun } from "react-icons/bi";
+} from '@nextui-org/react';
+import { CgDarkMode } from 'react-icons/cg';
+import { BiMoon, BiSun } from 'react-icons/bi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isDark, setIsDark] = React.useState(false);
 
   const handleTheme = () => {
-    document.getElementById("theme")?.classList.toggle("dark");
+    document.getElementById('theme')?.classList.toggle('dark');
     setIsDark(!isDark);
   };
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    'Profile',
+    'Dashboard',
+    'Activity',
+    'Analytics',
+    'System',
+    'Deployments',
+    'My Settings',
+    'Team Settings',
+    'Help & Feedback',
+    'Log Out',
   ];
 
   return (
     <Nav
-      className="font-bold bg-transparent fixed"
+      className="fixed bg-transparent font-bold"
       shouldHideOnScroll
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="sm:hidden">
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-12" justify="start">
+      <NavbarContent className="hidden gap-12 sm:flex" justify="start">
         <NavbarItem>
           <a color="foreground" href="#Hero">
             Hero
@@ -81,10 +81,10 @@ export default function Navbar() {
             <Link
               color={
                 index === 2
-                  ? "primary"
+                  ? 'primary'
                   : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
+                  ? 'danger'
+                  : 'foreground'
               }
               className="w-full"
               href="#"
