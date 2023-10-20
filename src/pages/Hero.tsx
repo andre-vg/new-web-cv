@@ -6,6 +6,7 @@ import { Image } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
 // @ts-ignore
 import useSound from 'use-sound';
+import '../assets/cursor.css';
 
 function Hero() {
   // const [ryanGosling, setRyanGosling] = useState(false);
@@ -35,7 +36,7 @@ function Hero() {
         className="flex w-3/4 flex-col gap-2 md:w-auto"
       >
         <h1 className="text-2xl font-bold md:text-4xl">My name is</h1>
-        <h1 className="text-6xl text-center font-bold md:text-7xl">
+        <h1 className="text-center text-6xl font-bold md:text-7xl">
           André Gonçalves
         </h1>
         <h1 className="text-right text-xl font-bold md:text-2xl">& I am</h1>
@@ -49,8 +50,9 @@ function Hero() {
             1000,
           ]}
           repeat={Infinity}
+          cursor={false}
           wrapper="h1"
-          className="text-5xl md:text-7xl"
+          className="text-5xl md:text-7xl type"
         />
       </m.div>
       <m.div

@@ -8,5 +8,5 @@ body {
 }
 
 html{
-  scroll-behavior: smooth;
+  @apply scroll-smooth;
 }

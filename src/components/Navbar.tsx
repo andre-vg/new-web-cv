@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Navbar as Nav,
-  NavbarBrand,
   NavbarContent,
   NavbarItem,
   Button,
@@ -10,16 +9,16 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
-import { CgDarkMode } from 'react-icons/cg';
 import { BiMoon, BiSun } from 'react-icons/bi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(false);
+  const [isDark, setIsDark] = React.useState(localStorage.getItem('theme') === 'dark');
 
   const handleTheme = () => {
     document.getElementById('theme')?.classList.toggle('dark');
     setIsDark(!isDark);
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
   };
 
   const menuItems = [
