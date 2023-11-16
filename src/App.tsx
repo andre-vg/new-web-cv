@@ -5,21 +5,18 @@ import Hero from './pages/Hero';
 import { useEffect, useState } from 'react';
 
 function App() {
-
-  const[isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark');
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem('theme') === 'dark',
+  );
 
   useEffect(() => {
-    localStorage.getItem('theme') === 'dark' ?
-      document.getElementById('theme')?.classList.add('dark') :
-      document.getElementById('theme')?.classList.remove('dark');
+    localStorage.getItem('theme') === 'dark'
+      ? document.getElementById('theme')?.classList.add('dark')
+      : document.getElementById('theme')?.classList.remove('dark');
   }, []);
-  
 
   return (
-    <main
-      id="theme"
-      className="h-full w-full bg-background text-foreground"
-    >
+    <main id="theme" className="h-full w-full bg-background text-foreground">
       <Navbar />
       <Hero />
       <About />

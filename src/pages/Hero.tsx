@@ -1,25 +1,14 @@
 import { TypeAnimation } from 'react-type-animation';
 import { motion as m } from 'framer-motion';
-import ThemeButton from '../components/ThemeButton';
 import FotoMinha from '../assets/euCortado.jpg';
 import { Image } from '@nextui-org/react';
-import { useEffect, useState } from 'react';
 // @ts-ignore
 import useSound from 'use-sound';
 import '../assets/cursor.css';
+import Translator from '../i18n/Translator';
+import { t } from 'i18next';
 
 function Hero() {
-  // const [ryanGosling, setRyanGosling] = useState(false);
-  // const [play, { stop }] = useSound(ryanSound, { volume: 0.1 });
-
-  // useEffect(() => {
-  //   if (ryanGosling) {
-  //     play();
-  //   } else {
-  //     stop();
-  //   }
-  // }, [ryanGosling]);
-
   return (
     <div
       id="Hero"
@@ -35,24 +24,32 @@ function Hero() {
         }}
         className="flex w-3/4 flex-col gap-2 md:w-auto"
       >
-        <h1 className="text-2xl font-bold md:text-4xl">My name is</h1>
+        <h1 className="text-2xl font-bold md:text-4xl">
+          <Translator path="hero.greeting" />
+        </h1>
         <h1 className="text-center text-6xl font-bold md:text-7xl">
           André Gonçalves
         </h1>
-        <h1 className="text-right text-xl font-bold md:text-2xl">& I am</h1>
+        <h1 className="text-right text-xl font-bold md:text-2xl">
+          <Translator path="hero.is" />
+        </h1>
         <TypeAnimation
           sequence={[
-            'A Developer',
+            t('hero.adj.1'),
             1000,
-            'A Designer',
+            t('hero.adj.2'),
             1000,
-            'A Learner',
+            t('hero.adj.3'),
+            1000,
+            t('hero.adj.4'),
+            1000,
+            t('hero.adj.5'),
             1000,
           ]}
           repeat={Infinity}
           cursor={false}
           wrapper="h1"
-          className="text-5xl md:text-7xl type"
+          className="type text-5xl md:text-7xl"
         />
       </m.div>
       <m.div

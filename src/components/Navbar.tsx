@@ -10,15 +10,20 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/react';
 import { BiMoon, BiSun } from 'react-icons/bi';
+import I18n from './i18n/I18n';
+import { useTheme } from 'next-themes';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(localStorage.getItem('theme') === 'dark');
+  const [isDark, setIsDark] = React.useState(
+    localStorage.getItem('theme') === 'dark',
+  );
+  const { theme, setTheme } = useTheme();
 
   const handleTheme = () => {
-    document.getElementById('theme')?.classList.toggle('dark');
     setIsDark(!isDark);
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
   };
 
   const menuItems = [
@@ -71,8 +76,11 @@ export default function Navbar() {
           isIconOnly
           color="default"
         >
-          {isDark ? <BiMoon size="24" /> : <BiSun size="24" />}
+          {!isDark ? <BiMoon size="24" /> : <BiSun size="24" />}
         </Button>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <I18n />
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
