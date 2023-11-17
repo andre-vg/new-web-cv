@@ -2,8 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Hero from './pages/Hero';
-import { useEffect, useState } from 'react';
-import Projects from './pages/Projects';
+// import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
+      {/* <Projects /> */}
     </main>
   );
 }

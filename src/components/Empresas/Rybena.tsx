@@ -5,7 +5,6 @@ import {
   Avatar,
   CardBody,
 } from '@nextui-org/react';
-import React from 'react';
 import { MdAccessibility } from 'react-icons/md';
 import Translator from '../../i18n/Translator';
 import TimelineBox from '../TimelineBox';

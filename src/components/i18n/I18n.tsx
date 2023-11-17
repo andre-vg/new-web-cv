@@ -11,7 +11,6 @@ import {
 
 const I18n = () => {
   const { i18n } = useTranslation();
-  const popRef = React.useRef(null);
 
   function handleChangeLanguage(language: any) {
     i18n.changeLanguage(language);

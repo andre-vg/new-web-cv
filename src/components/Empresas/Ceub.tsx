@@ -1,5 +1,4 @@
 import { semanticColors, Card, CardHeader, CardBody } from '@nextui-org/react';
-import React from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
 import Translator from '../../i18n/Translator';
 import TimelineBox from '../TimelineBox';
