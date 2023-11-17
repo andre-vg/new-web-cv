@@ -11,6 +11,9 @@ export default {
         5: 'an Enthusiast',
       },
     },
+    time: {
+      present: 'Today',
+    },
     about: {
       education: {
         title: 'Education',
@@ -20,6 +23,26 @@ export default {
           3: 'with a Bachelor of Science in Computer Science. Proficient in Python and JavaScript. Experience in web development and project management.',
         },
       },
+      embrapa: {
+        title: 'Embrapa genetic resources',
+        text: 'Development of web applications for the management of research data and development of new species of plants for the Embrapa research data management system.',
+        comp: {
+          1: 'Java',
+          2: 'MySQL',
+          3: 'JSP',
+        },
+      },
+      icts: {
+        title: 'ICTS Group',
+        text: 'Development of web systems for internal project management.',
+        comp: {
+          1: 'React',
+          2: 'NodeJS',
+          3: 'MariaDB',
+          4: 'ORM',
+        },
+      },
+      rybena: {},
     },
   },
 };

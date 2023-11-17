@@ -11,6 +11,8 @@ export default {
       backgroundImage: {
         'waves': "url('/src/assets/waves.svg')",
         'wavesLight': "url('/src/assets/waveswhite.svg')",
+        'waves2': "url('/src/assets/waves2.svg')",
+        'waves2Light': "url('/src/assets/waves2Light.svg')",
       }
     },
   },

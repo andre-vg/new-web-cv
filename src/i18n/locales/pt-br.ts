@@ -11,6 +11,9 @@ export default {
         5: 'um Entusiasta',
       },
     },
+    time: {
+      present: 'Hoje',
+    },
     about: {
       education: {
         title: 'Education',
@@ -22,7 +25,32 @@ export default {
       },
       embrapa: {
         title: 'Embrapa recursos genéticos',
-        text: {},
+        text: 'Desenvolvimento de aplicações web para o gerenciamento de dados de pesquisa e desenvolvimento de novas espécies da flora para o sistema de gerenciamento de dados de pesquisa da Embrapa.',
+        comp: {
+          1: 'Java',
+          2: 'MySQL',
+          3: 'JSP',
+        },
+      },
+      icts: {
+        title: 'Grupo ICTS',
+        text: 'Desenvolvimento de sistemas web para gerenciamento de projetos internos da empresa.',
+        comp: {
+          1: 'React',
+          2: 'NodeJS',
+          3: 'MariaDB',
+          4: 'ORM',
+        },
+      },
+      rybena: {
+        title: 'Rybena Tecnologias Assistivas',
+        text: 'Desenvolvimento de funcionalidades de acessibilidade para a ferramenta web, manutenção e desenvolvimento de sistemas de gerenciamento interno e de clientes.',
+        comp: {
+          1: 'Vuejs',
+          2: 'Java (Spring Boot, Hibernate)',
+          3: 'Postgres',
+          4: 'Javascript (DOM, Singleton)',
+        },
       },
     },
   },

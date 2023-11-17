@@ -1,39 +1,60 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-// useTranslation é um hook 
-// que devolve uma função de tradução (t) e a instância do i18n
-
-// Importa as bandeiras (imagens e componente)
-import BrasilFlag from '../../assets/brasil-flag.svg'
-import EuaFlag from '../../assets/eua-flag.svg'
-import Flag from './Flag'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import BrasilFlag from '../../assets/brasil-flag.svg';
+import EuaFlag from '../../assets/eua-flag.svg';
+import {
+  Avatar,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@nextui-org/react';
 
 const I18n = () => {
-  const { i18n } = useTranslation()
-  // Instância do i18n
+  const { i18n } = useTranslation();
+  const popRef = React.useRef(null);
 
-  function handleChangeLanguage(language:any) {
-    // Trocando o idioma na chamada da função
-    i18n.changeLanguage(language)
+  function handleChangeLanguage(language: any) {
+    i18n.changeLanguage(language);
   }
 
-  const selectedLanguage = i18n.language // Idioma selecionado
+  const paises = [
+    { value: 'pt-BR', label: 'Português', image: BrasilFlag },
+    { value: 'en-US', label: 'English', image: EuaFlag },
+  ];
+
+  const selectedLanguage = i18n.language; // Idioma selecionado
+
+  const [open, setOpen] = React.useState(false);
+
   return (
     <div className="flex">
-      <Flag
-        image={BrasilFlag}
-        isSelected={selectedLanguage === 'pt-BR'} // Verifica o idioma escolhido
-        // @ts-ignore
-        onClick={() => handleChangeLanguage('pt-BR')} // Troca o idioma para pt-BR
-      />
-      <Flag
-        image={EuaFlag}
-        isSelected={selectedLanguage === 'en-US'} // Verifica o idioma escolhido
-        // @ts-ignore
-        onClick={() => handleChangeLanguage('en-US')} // Troca o idioma para en-US
-      />
+      <Popover key={'blur'} backdrop="blur">
+        <PopoverTrigger onClick={() => setOpen(!open)}>
+          <Avatar
+            src={selectedLanguage === 'pt-BR' ? BrasilFlag : EuaFlag}
+            size="sm"
+            className="cursor-pointer"
+          />
+        </PopoverTrigger>
+        <PopoverContent className="p-0">
+          <div className="flex flex-col">
+            {paises.map(pais => (
+              <div
+                key={pais.value}
+                className="flex cursor-pointer items-center gap-4 p-4 hover:rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                onClick={() => {
+                  handleChangeLanguage(pais.value);
+                }}
+              >
+                <Avatar src={pais.image} size="sm" />
+                <p>{pais.label}</p>
+              </div>
+            ))}
+          </div>
+        </PopoverContent>
+      </Popover>
     </div>
-  )
-}
+  );
+};
 
-export default I18n
+export default I18n;

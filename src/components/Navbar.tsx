@@ -23,7 +23,7 @@ export default function Navbar() {
   const handleTheme = () => {
     setIsDark(!isDark);
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    theme === 'dark' ? setTheme('light') : setTheme('dark')
+    theme === 'dark' ? setTheme('light') : setTheme('dark');
   };
 
   const menuItems = [
@@ -69,7 +69,7 @@ export default function Navbar() {
           </a>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent justify="center">
         <Button
           onClick={() => handleTheme()}
           variant="bordered"
@@ -78,8 +78,6 @@ export default function Navbar() {
         >
           {!isDark ? <BiMoon size="24" /> : <BiSun size="24" />}
         </Button>
-      </NavbarContent>
-      <NavbarContent justify="end">
         <I18n />
       </NavbarContent>
       <NavbarMenu>
