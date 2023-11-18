@@ -12,6 +12,7 @@ import {
 import { BiMoon, BiSun } from 'react-icons/bi';
 import I18n from './i18n/I18n';
 import { useTheme } from 'next-themes';
+import Translator from '../i18n/Translator';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -55,17 +56,17 @@ export default function Navbar() {
       <NavbarContent className="hidden gap-12 sm:flex" justify="start">
         <NavbarItem>
           <a color="foreground" href="#Hero">
-            Hero
+            <Translator path="navbar.home" />
           </a>
         </NavbarItem>
         <NavbarItem>
-          <a href="#" aria-current="page">
-            Customers
+          <a href="#about">
+            <Translator path="navbar.about" />
           </a>
         </NavbarItem>
         <NavbarItem>
-          <a color="foreground" href="#">
-            Integrations
+          <a href="#projects">
+            <Translator path="navbar.projects" />
           </a>
         </NavbarItem>
       </NavbarContent>

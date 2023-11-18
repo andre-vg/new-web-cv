@@ -1,10 +1,16 @@
 export default {
   translations: {
+    navbar:{
+      home: 'Home',
+      about: 'Sobre',
+      projects: 'Projetos',
+      contact: 'Contato',
+    },
     hero: {
       greeting: 'Meu nome é',
       is: 'e eu sou',
       adj: {
-        1: 'um Desenvolvedor',
+        1: 'um Web Dev',
         2: 'um Designer',
         3: 'um Aprendiz',
         4: 'um Estudante',
@@ -15,6 +21,8 @@ export default {
       present: 'Hoje',
     },
     about: {
+      title: 'Sobre mim',
+      subtitle: 'Minha história até agora',
       education: {
         title: 'Education',
         text: {
@@ -52,6 +60,28 @@ export default {
           4: 'Javascript (DOM, Singleton)',
         },
       },
+    },
+    projetos: [
+      {
+        name: 'PCD-in',
+        descricao:
+          'Uma plataforma para conectar pessoas com deficiência a empresas que buscam contratar pessoas com essas condições. Tornando o mercado de trabalho mais inclusivo. Esse projeto foi o meu trabalho de conclusão de curso.',
+        link: 'https://github.com/andre-vg/pcd-in',
+        imagem: '../assets/projetos/P2.png',
+        tags: ['React Native', 'NodeJS', 'Expo', 'Firebase'],
+      },
+      {
+        name: 'Currículo WEB',
+        descricao:
+          'Projeto para fazer meu currículo online e praticar as ferramentas de desenvolvimento web. Esse projeto eu uso como projeto modelo, tudo que aprendo eu tento aplicar no projeto. Essa é uma forma de sempre estar desenvolvendo e aprendendo.',
+        link: 'https://github.com/andre-vg/new-web-cv',
+        imagem: 'https://via.placeholder.com/150',
+        tags: ['React', 'Typescript', 'Tailwind', 'i18n'],
+      },
+    ],
+    projetosPage: {
+      title: 'Projetos',
+      subtitle: 'Veja alguns dos meus projetos',
     },
   },
 };
