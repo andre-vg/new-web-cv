@@ -13,7 +13,7 @@ function ProjectCard({ project }: { project: Projeto }) {
   const logo = new URL(project.imagem, import.meta.url).href;
   const { theme } = useTheme();
   return (
-    <Card className="h-max w-3/4 self-center p-8 lg:w-4/5 xl:w-2/5">
+    <Card className="h-max w-3/4 self-center bg-neutral-100 p-8 dark:bg-neutral-900 lg:w-4/5 xl:w-2/5">
       <CardHeader className="flex gap-8 text-3xl font-bold">
         <Avatar isBordered src={logo} size="lg" />
         {project.name}

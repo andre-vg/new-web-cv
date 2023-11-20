@@ -67,7 +67,7 @@ export default {
         descricao:
           'Uma plataforma para conectar pessoas com deficiência a empresas que buscam contratar pessoas com essas condições. Tornando o mercado de trabalho mais inclusivo. Esse projeto foi o meu trabalho de conclusão de curso.',
         link: 'https://github.com/andre-vg/pcd-in',
-        imagem: '../assets/projetos/P2.png',
+        imagem: '/P2.png',
         tags: ['React Native', 'NodeJS', 'Expo', 'Firebase'],
       },
       {
@@ -75,7 +75,7 @@ export default {
         descricao:
           'Projeto para fazer meu currículo online e praticar as ferramentas de desenvolvimento web. Esse projeto eu uso como projeto modelo, tudo que aprendo eu tento aplicar no projeto. Essa é uma forma de sempre estar desenvolvendo e aprendendo.',
         link: 'https://github.com/andre-vg/new-web-cv',
-        imagem: 'https://via.placeholder.com/150',
+        imagem: '/eu.jpg',
         tags: ['React', 'Typescript', 'Tailwind', 'i18n'],
       },
     ],

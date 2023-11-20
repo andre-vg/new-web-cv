@@ -67,7 +67,7 @@ export default {
         descricao:
           'A platform to connect people with disabilities to companies looking to hire people with these conditions. Making the job market more inclusive. This project was my undergraduate thesis.',
         link: 'https://github.com/andre-vg/pcd-in',
-        imagem: '../assets/projetos/P2.png',
+        imagem: '/P2.png',
         tags: ['React Native', 'NodeJS', 'Expo', 'Firebase'],
       },
       {
@@ -75,7 +75,7 @@ export default {
         descricao:
           'Project to create my online resume and practice web development tools. I use this project as a model project, I try to apply everything I learn to the project. This is a way to always be developing and learning.',
         link: 'https://github.com/andre-vg/new-web-cv',
-        imagem: 'https://via.placeholder.com/150',
+        imagem: '/eu.jpg',
         tags: ['React', 'Typescript', 'Tailwind', 'i18n'],
       },
     ],
