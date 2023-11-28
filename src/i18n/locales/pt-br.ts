@@ -83,5 +83,15 @@ export default {
       title: 'Projetos',
       subtitle: 'Veja alguns dos meus projetos',
     },
+    contact:{
+      title: 'Contato',
+      subtitle: 'Entre em contato comigo',
+      form: {
+        name: 'Nome',
+        email: 'Email',
+        message: 'Mensagem',
+        send: 'Enviar',
+      },
+    }
   },
 };
