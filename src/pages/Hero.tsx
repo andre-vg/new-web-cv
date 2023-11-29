@@ -22,7 +22,7 @@ function Hero() {
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
-        className="flex flex-col gap-2 md:w-auto px-10"
+        className="flex flex-col gap-2 px-10 md:w-auto"
       >
         <h1 className="text-2xl font-bold md:text-4xl">
           <Translator path="hero.greeting" />

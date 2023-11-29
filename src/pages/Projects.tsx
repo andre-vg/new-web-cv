@@ -24,7 +24,10 @@ function Projects() {
   });
 
   return (
-    <div id='projects' className="flex h-full flex-col justify-around gap-40 bg-[#dbdbdb] dark:bg-[#2c2d2d]">
+    <div
+      id="projects"
+      className="flex h-full flex-col justify-around gap-40 bg-[#dbdbdb] dark:bg-[#2c2d2d]"
+    >
       <div className="sm:flex-row md:px-40 lg:gap-40 lg:px-80">
         <h1 className="text-center text-7xl font-bold text-[#2c2d2d] dark:text-[#dbdbdb]">
           <Translator path="projetosPage.title" />

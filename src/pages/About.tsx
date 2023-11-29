@@ -8,8 +8,8 @@ import Translator from '../i18n/Translator';
 
 function About() {
   return (
-    <div id='about' className="h-full bg-[#a7a7a7] dark:bg-black">
-      <div className="sm:flex-row md:px-40 lg:gap-40 lg:px-80 mb-20">
+    <div id="about" className="h-full bg-[#a7a7a7] dark:bg-black">
+      <div className="mb-20 sm:flex-row md:px-40 lg:gap-40 lg:px-80">
         <h1 className="text-center text-7xl font-bold text-[#2c2d2d] dark:text-[#dbdbdb]">
           <Translator path="about.title" />
         </h1>

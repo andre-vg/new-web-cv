@@ -1,6 +1,6 @@
 export default {
   translations: {
-    navbar:{
+    navbar: {
       home: 'Home',
       about: 'Sobre',
       projects: 'Projetos',
@@ -83,7 +83,7 @@ export default {
       title: 'Projetos',
       subtitle: 'Veja alguns dos meus projetos',
     },
-    contact:{
+    contact: {
       title: 'Contato',
       subtitle: 'Entre em contato comigo',
       form: {
@@ -92,6 +92,6 @@ export default {
         message: 'Mensagem',
         send: 'Enviar',
       },
-    }
+    },
   },
 };
