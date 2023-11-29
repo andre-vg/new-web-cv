@@ -1,7 +1,9 @@
-import { Button, Input, Textarea } from '@nextui-org/react';
+import { Button, Divider, Input, Textarea } from '@nextui-org/react';
 import { useTheme } from 'next-themes';
 import React, { useState } from 'react';
 import Translator from '../i18n/Translator';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 function Contact() {
   const { theme } = useTheme();
@@ -27,7 +29,7 @@ function Contact() {
         </p>
       </div>
       <form
-        className="flex w-3/4 flex-col gap-8 "
+        className="flex w-3/4 flex-col gap-8 lg:w-1/2 xl:w-1/3 "
         action="https://formsubmit.co/dd81f325ffc39e91ac747c3a7370dac7"
         method="POST"
       >
@@ -46,6 +48,7 @@ function Contact() {
           required
         />
         <input type="hidden" name="_subject" value="Novo contato!!" />
+        <input type="hidden" name="_captcha" value="false" />
         <Textarea
           label="Mensagem"
           placeholder="Escreva sua mensagem..."
@@ -61,6 +64,25 @@ function Contact() {
         >
           Enviar
         </Button>
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Divider />
+          <div className="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/andr%C3%A9-gon%C3%A7alves-a74535163/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin className="cursor-pointer text-4xl text-[#2c2d2d] transition-colors duration-300 hover:text-[#0a66c2] dark:text-[#dbdbdb] dark:hover:text-[#0a66c2]" />
+            </a>
+            <a
+              href="https://twitter.com/dedez00"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaXTwitter className="cursor-pointer text-4xl text-[#2c2d2d] transition-colors duration-300 hover:text-black dark:text-[#dbdbdb] dark:hover:text-white" />
+            </a>
+          </div>
+        </div>
       </form>
     </div>
   );
