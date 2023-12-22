@@ -22,7 +22,7 @@ export default {
     },
     about: {
       title: 'Sobre mim',
-      subtitle: 'Minha história até agora',
+      subtitle: 'Minha história (até agora)',
       education: {
         title: 'Education',
         text: {
@@ -92,6 +92,13 @@ export default {
         message: 'Mensagem',
         send: 'Enviar',
       },
+      done: {
+        title: 'Obrigado!',
+        text: 'Sua mensagem foi enviada com sucesso.',
+      },
+    },
+    footer: {
+      title: ' Desenvolvido por ',
     },
   },
 };
