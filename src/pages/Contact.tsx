@@ -41,7 +41,7 @@ function Contact() {
   };
 
   return (
-    <div className="flex h-screen flex-col items-center justify-evenly gap-24 bg-[#dbdbdb] dark:bg-[#2c2d2d] xl:justify-end xl:gap-48">
+    <div id='contact' className="flex h-screen flex-col items-center justify-end gap-12 bg-[#dbdbdb] dark:bg-[#2c2d2d] md:gap-12 xl:gap-16 ">
       <div className="sm:flex-row md:px-40 lg:gap-40 lg:px-80">
         <h1 className="text-center text-7xl font-bold text-[#2c2d2d] dark:text-[#dbdbdb]">
           <Translator path="contact.title" />
@@ -98,7 +98,7 @@ function Contact() {
             required
           />
           <Button
-            variant="shadow"
+            variant="solid"
             isLoading={loading}
             color={theme == 'light' ? 'primary' : 'secondary'}
             isDisabled={!!!form.name || !!!form.email || !!!form.message}

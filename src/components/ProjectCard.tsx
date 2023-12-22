@@ -15,13 +15,14 @@ function ProjectCard({ project }: { project: Projeto }) {
   return (
     <Card className="h-max w-3/4 self-center bg-neutral-100 p-8 dark:bg-neutral-900 lg:w-4/5 xl:w-2/5">
       <CardHeader className="flex gap-8 text-3xl font-bold">
-        <Avatar isBordered src={logo} size="lg" />
+        <Avatar isBordered src={logo} size="lg" className='aspect-square' />
         {project.name}
       </CardHeader>
       <CardBody className="text-xl">{project.descricao}</CardBody>
       <CardFooter className="flex flex-wrap gap-4">
         {project.tags.map((language: string) => (
           <Chip
+          variant='flat'
             key={language}
             color={theme == 'light' ? 'primary' : 'secondary'}
             size="lg"
