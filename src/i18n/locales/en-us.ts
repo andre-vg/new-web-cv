@@ -97,8 +97,8 @@ export default {
         text: 'Your message has been sent.',
       },
     },
-    footer:{
+    footer: {
       title: ' Developed by ',
-    }
+    },
   },
 };

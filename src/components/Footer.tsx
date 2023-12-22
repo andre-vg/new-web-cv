@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       <footer className="flex h-32 w-full flex-col items-center justify-evenly px-16">
         <Divider className="hidden lg:block" />
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center gap-4">
           <p>
             &copy;
             <Translator path="footer.title" /> André Gonçalves
