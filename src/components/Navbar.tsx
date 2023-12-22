@@ -9,7 +9,14 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
-import { BiMoon, BiSun } from 'react-icons/bi';
+import {
+  BiCodeAlt,
+  BiHomeAlt2,
+  BiMessageDots,
+  BiMoon,
+  BiSun,
+  BiUser,
+} from 'react-icons/bi';
 import I18n from './i18n/I18n';
 import { useTheme } from 'next-themes';
 import Translator from '../i18n/Translator';
@@ -28,22 +35,31 @@ export default function Navbar() {
   };
 
   const menuItems = [
-    'Profile',
-    'Dashboard',
-    'Activity',
-    'Analytics',
-    'System',
-    'Deployments',
-    'My Settings',
-    'Team Settings',
-    'Help & Feedback',
-    'Log Out',
+    {
+      name: <Translator path="navbar.home" />,
+      href: '#Hero',
+      icon: <BiHomeAlt2 size="24" />,
+    },
+    {
+      name: <Translator path="navbar.about" />,
+      href: '#about',
+      icon: <BiUser size="24" />,
+    },
+    {
+      name: <Translator path="navbar.projects" />,
+      href: '#projects',
+      icon: <BiCodeAlt size="24" />,
+    },
+    {
+      name: <Translator path="navbar.contact" />,
+      href: '#contact',
+      icon: <BiMessageDots size="24" />,
+    },
   ];
 
   return (
     <Nav
       className="fixed bg-transparent font-bold"
-      shouldHideOnScroll
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="sm:hidden">
@@ -69,6 +85,11 @@ export default function Navbar() {
             <Translator path="navbar.projects" />
           </a>
         </NavbarItem>
+        <NavbarItem>
+          <a href="#contact">
+            <Translator path="navbar.contact" />
+          </a>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="center">
         <Button
@@ -81,22 +102,24 @@ export default function Navbar() {
         </Button>
         <I18n />
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="gap-8 bg-white bg-opacity-20 pt-8 backdrop-blur-lg dark:bg-black">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem
+            isActive={window.location.href.includes(item.href)}
+            key={`${item}-${index}`}
+            className="text-4xl"
+          >
             <Link
-              color={
-                index === 2
-                  ? 'primary'
-                  : index === menuItems.length - 1
-                  ? 'danger'
-                  : 'foreground'
-              }
-              className="w-full"
-              href="#"
+              className="flex w-full items-center justify-normal gap-4 text-4xl"
+              href={item.href}
               size="lg"
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+              color="foreground"
             >
-              {item}
+              {item.icon}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
