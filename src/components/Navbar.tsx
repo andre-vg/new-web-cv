@@ -102,7 +102,7 @@ export default function Navbar() {
         </Button>
         <I18n />
       </NavbarContent>
-      <NavbarMenu className="gap-8 bg-white bg-opacity-20 pt-8 backdrop-blur-lg dark:bg-black">
+      <NavbarMenu className="gap-8 bg-white bg-opacity-20 dark:bg-opacity-20 pt-8 backdrop-blur-lg dark:bg-black">
         {menuItems.map((item, index) => (
           <NavbarMenuItem
             isActive={window.location.href.includes(item.href)}
