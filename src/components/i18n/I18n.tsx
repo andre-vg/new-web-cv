@@ -14,6 +14,7 @@ const I18n = () => {
 
   function handleChangeLanguage(language: any) {
     i18n.changeLanguage(language);
+    setOpen(false);
   }
 
   const paises = [
@@ -27,8 +28,12 @@ const I18n = () => {
 
   return (
     <div className="flex">
-      <Popover key={'blur'} backdrop="blur">
-        <PopoverTrigger onClick={() => setOpen(!open)}>
+      <Popover
+        isOpen={open}
+        onOpenChange={open => setOpen(open)}
+        backdrop="blur"
+      >
+        <PopoverTrigger>
           <Avatar
             src={selectedLanguage === 'pt-BR' ? BrasilFlag : EuaFlag}
             size="sm"
