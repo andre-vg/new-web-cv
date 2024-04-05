@@ -5,9 +5,9 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
   return (
     <>
-      <footer className="flex h-32 w-full flex-col items-center justify-evenly px-16">
+      <footer className="flex h-32 w-full flex-col items-center justify-evenly px-16 bg-[#dbdbdb] dark:bg-[#2c2d2d]">
         <Divider className="hidden lg:block" />
-        <div className="flex flex-col-reverse md:flex-row items-center gap-4">
+        <div className="flex flex-col-reverse items-center gap-4 md:flex-row">
           <p>
             &copy;
             <Translator path="footer.title" /> André Gonçalves

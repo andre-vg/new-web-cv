@@ -41,7 +41,7 @@ function Contact() {
   };
 
   return (
-    <div id='contact' className="flex h-screen flex-col items-center justify-end gap-12 bg-[#dbdbdb] dark:bg-[#2c2d2d] md:gap-12 xl:gap-16 ">
+    <div id='contact' className="flex h-screen flex-col items-center justify-center gap-12 bg-[#dbdbdb] dark:bg-[#2c2d2d] md:gap-12 xl:gap-16 ">
       <div className="sm:flex-row md:px-40 lg:gap-40 lg:px-80">
         <h1 className="text-center text-7xl font-bold text-[#2c2d2d] dark:text-[#dbdbdb]">
           <Translator path="contact.title" />
@@ -108,7 +108,6 @@ function Contact() {
           </Button>
         </div>
       </form>
-      <Footer />
     </div>
   );
 }

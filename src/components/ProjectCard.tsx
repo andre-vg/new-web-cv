@@ -5,31 +5,43 @@ import {
   CardFooter,
   Chip,
   Avatar,
+  Snippet,
 } from '@nextui-org/react';
 import { Projeto } from '../interfaces';
 import { useTheme } from 'next-themes';
 
 function ProjectCard({ project }: { project: Projeto }) {
-  const logo = new URL(project.imagem, import.meta.url).href;
   const { theme } = useTheme();
   return (
-    <Card className="h-max w-3/4 self-center bg-neutral-100 p-8 dark:bg-neutral-900 lg:w-4/5 xl:w-2/5">
+    <Card className="h-full auto-rows-auto self-center bg-neutral-100 p-4 dark:bg-neutral-900 lg:p-8">
       <CardHeader className="flex gap-8 text-3xl font-bold">
-        <Avatar isBordered src={logo} size="lg" className='aspect-square' />
-        {project.name}
+        <Avatar
+          isBordered
+          src={project.owner.avatar_url}
+          size="lg"
+          classNames={{
+            base: 'w-14 h-14 min-w-fit',
+          }}
+        />
+        <p className="break-all">{project.name}</p>
       </CardHeader>
-      <CardBody className="text-xl">{project.descricao}</CardBody>
-      <CardFooter className="flex flex-wrap gap-4">
-        {project.tags.map((language: string) => (
-          <Chip
-          variant='flat'
-            key={language}
-            color={theme == 'light' ? 'primary' : 'secondary'}
-            size="lg"
-          >
-            {language}
-          </Chip>
-        ))}
+      <CardBody className="text-xl">{project.description}</CardBody>
+      <CardFooter className='flex-col justify-start items-start gap-4'>
+        <div className="flex flex-wrap gap-4">
+          {project.topics.map((language: string) => (
+            <Chip
+              variant="flat"
+              key={language}
+              color={'primary'}
+              size="lg"
+            >
+              {language}
+            </Chip>
+          ))}
+        </div>
+        <Snippet color={theme == 'light' ? 'primary' : 'secondary'}>
+          {project.clone_url}
+        </Snippet>
       </CardFooter>
     </Card>
   );
