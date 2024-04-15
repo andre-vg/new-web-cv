@@ -2,7 +2,6 @@ import { Button, Input, Textarea } from '@nextui-org/react';
 import { useTheme } from 'next-themes';
 import React, { useState } from 'react';
 import Translator from '../i18n/Translator';
-import Footer from '../components/Footer';
 import { FaCheckCircle } from 'react-icons/fa';
 
 function Contact() {
@@ -41,7 +40,10 @@ function Contact() {
   };
 
   return (
-    <div id='contact' className="flex h-screen flex-col items-center justify-center gap-12 bg-[#dbdbdb] dark:bg-[#2c2d2d] md:gap-12 xl:gap-16 ">
+    <div
+      id="contact"
+      className="flex h-screen flex-col items-center justify-center gap-12 bg-[#dbdbdb] dark:bg-[#2c2d2d] md:gap-12 xl:gap-16 "
+    >
       <div className="sm:flex-row md:px-40 lg:gap-40 lg:px-80">
         <h1 className="text-center text-7xl font-bold text-[#2c2d2d] dark:text-[#dbdbdb]">
           <Translator path="contact.title" />

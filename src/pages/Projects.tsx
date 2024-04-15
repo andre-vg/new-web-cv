@@ -7,17 +7,19 @@ import Translator from '../i18n/Translator';
 import { useQuery } from '@tanstack/react-query';
 
 function Projects() {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ['projects'],
     queryFn: getProjects,
   });
 
-  async function getProjects():Promise<Projeto[]> {
-    const res = await fetch('https://api.github.com/users/andre-vg/repos?&sort=pushed&per_page=100&page=1');
+  async function getProjects(): Promise<Projeto[]> {
+    const res = await fetch(
+      'https://api.github.com/users/andre-vg/repos?&sort=pushed&per_page=100&page=1',
+    );
     const data = await res.json();
     return data;
   }
-  const [projetos, setProjetos] = useState<Projeto[]>(
+  const [, setProjetos] = useState<Projeto[]>(
     t('projetos', { returnObjects: true }),
   );
 
@@ -38,7 +40,7 @@ function Projects() {
           <Translator path="projetosPage.subtitle" />
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center justify-center px-12 xl:px-32 2xl:px-80 gap-8">
+      <div className="grid grid-cols-1 items-center justify-center gap-8 px-12 lg:grid-cols-2 xl:grid-cols-3 xl:px-32 2xl:px-80">
         {data?.map((project: Projeto) => (
           <ProjectCard key={project.name} project={project} />
         ))}

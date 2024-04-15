@@ -26,15 +26,10 @@ function ProjectCard({ project }: { project: Projeto }) {
         <p className="break-all">{project.name}</p>
       </CardHeader>
       <CardBody className="text-xl">{project.description}</CardBody>
-      <CardFooter className='flex-col justify-start items-start gap-4'>
+      <CardFooter className="flex-col items-start justify-start gap-4">
         <div className="flex flex-wrap gap-4">
           {project.topics.map((language: string) => (
-            <Chip
-              variant="flat"
-              key={language}
-              color={'primary'}
-              size="lg"
-            >
+            <Chip variant="flat" key={language} color={'primary'} size="lg">
               {language}
             </Chip>
           ))}
