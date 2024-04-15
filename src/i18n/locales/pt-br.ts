@@ -24,7 +24,7 @@ export default {
       title: 'Sobre mim',
       subtitle: 'Minha história (até agora)',
       education: {
-        title: 'Education',
+        title: 'Escolaridade',
         text: {
           1: 'Graduado pelo',
           2: 'Centro de Ensino Unificado de Brasília',

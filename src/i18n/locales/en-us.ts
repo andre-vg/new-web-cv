@@ -22,7 +22,7 @@ export default {
     },
     about: {
       title: 'About me',
-      subtitle: 'My story (so far',
+      subtitle: 'My story (so far)',
       education: {
         title: 'Education',
         text: {
