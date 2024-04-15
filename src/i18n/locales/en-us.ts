@@ -82,6 +82,7 @@ export default {
     projetosPage: {
       title: 'Projects',
       subtitle: 'Here are some of my projects',
+      topics: 'Related topics',
     },
     contact: {
       title: 'Contact',
