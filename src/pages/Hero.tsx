@@ -3,12 +3,22 @@ import { motion as m } from 'framer-motion';
 import FotoMinha from '../assets/euCortado.jpg';
 import { Image } from '@nextui-org/react';
 // @ts-ignore
-import useSound from 'use-sound';
 import '../assets/cursor.css';
 import Translator from '../i18n/Translator';
 import { t } from 'i18next';
+import { useEffect, useState } from 'react';
 
 function Hero() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count === 10) {
+      setTimeout(() => {
+        alert('Leticia eu te amo!! 💘');
+        setCount(0);
+      }, 1000);
+    }
+  }, [count]);
   return (
     <div
       id="Hero"
@@ -23,6 +33,7 @@ function Hero() {
           ease: 'easeInOut',
         }}
         className="flex flex-col gap-2 px-10 md:w-auto"
+        onClick={() => setCount(count + 1)}
       >
         <h1 className="text-2xl font-bold md:text-4xl">
           <Translator path="hero.greeting" />
@@ -49,7 +60,7 @@ function Hero() {
           repeat={Infinity}
           cursor={false}
           wrapper="h1"
-          className="type text-5xl md:text-7xl"
+          className="type block text-5xl data-[easter=true]:hidden md:text-7xl"
         />
       </m.div>
       <m.div
@@ -65,6 +76,7 @@ function Hero() {
       >
         <Image
           src={FotoMinha}
+          onClick={() => setCount(count + 1)}
           alt="André Gonçalves em preto e branco"
           className="h-96 w-96 rounded-bl-[10rem] rounded-br-[18rem] rounded-tl-[8rem] rounded-tr-[5rem] shadow-xl shadow-default-400 transition-all duration-500 ease-in-out dark:shadow-lg dark:shadow-default-400"
         />

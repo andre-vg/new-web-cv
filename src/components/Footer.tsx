@@ -8,7 +8,7 @@ export default function Footer() {
       <footer className="flex h-32 w-full flex-col items-center justify-evenly bg-[#dbdbdb] px-16 dark:bg-[#2c2d2d]">
         <Divider className="hidden lg:block" />
         <div className="flex flex-col-reverse items-center gap-4 md:flex-row">
-          <p>
+          <p className='text-center'>
             &copy;
             <Translator path="footer.title" /> André Gonçalves
           </p>
