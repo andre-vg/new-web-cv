@@ -3,127 +3,76 @@ import {
   Navbar as Nav,
   NavbarContent,
   NavbarItem,
-  Button,
-  Link,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react';
-import {
-  BiCodeAlt,
-  BiHomeAlt2,
-  BiMessageDots,
-  BiMoon,
-  BiSun,
-  BiUser,
-} from 'react-icons/bi';
-import I18n from './i18n/I18n';
+} from '@nextui-org/navbar';
+
 import { useTheme } from 'next-themes';
-import Translator from '../i18n/Translator';
+import { Button } from '@nextui-org/button';
+import { Link } from '@nextui-org/link';
+import { useTranslations } from 'next-intl';
+import { Code, Home, MessageCircleDashed, Moon, Sun, User } from 'lucide-react';
+import { ThemeSwitch } from './theme-switch';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(
-    localStorage.getItem('theme') === 'dark',
-  );
-  const { theme, setTheme } = useTheme();
-
-  const handleTheme = () => {
-    setIsDark(!isDark);
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
-  };
+  const t = useTranslations('navbar');
 
   const menuItems = [
     {
-      name: <Translator path="navbar.home" />,
+      name: t('home'),
       href: '#Hero',
-      icon: <BiHomeAlt2 size="24" />,
+      icon: <Home size="24" />,
     },
     {
-      name: <Translator path="navbar.about" />,
+      name: t('about'),
       href: '#about',
-      icon: <BiUser size="24" />,
+      icon: <User size="24" />,
     },
     {
-      name: <Translator path="navbar.projects" />,
+      name: t('projects'),
       href: '#projects',
-      icon: <BiCodeAlt size="24" />,
+      icon: <Code size="24" />,
     },
     {
-      name: <Translator path="navbar.contact" />,
+      name: t('contact'),
       href: '#contact',
-      icon: <BiMessageDots size="24" />,
+      icon: <MessageCircleDashed size="24" />,
     },
   ];
 
   return (
-    <Nav
-      className="fixed bg-transparent font-bold"
-      onMenuOpenChange={setIsMenuOpen}
-    >
-      <NavbarContent className="sm:hidden">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
-        />
-      </NavbarContent>
-
-      <NavbarContent className="hidden gap-12 sm:flex" justify="start">
+    <Nav>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <a color="foreground" href="#Hero">
-            <Translator path="navbar.home" />
-          </a>
+          <Link color="foreground" href="#">
+            Features
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="#" aria-current="page">
+            Customers
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <a href="#about">
-            <Translator path="navbar.about" />
-          </a>
-        </NavbarItem>
-        <NavbarItem>
-          <a href="#projects">
-            <Translator path="navbar.projects" />
-          </a>
-        </NavbarItem>
-        <NavbarItem>
-          <a href="#contact">
-            <Translator path="navbar.contact" />
-          </a>
+          <Link color="foreground" href="#">
+            Integrations
+          </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="center">
-        <Button
-          onClick={() => handleTheme()}
-          variant="bordered"
-          isIconOnly
-          color="default"
-        >
-          {!isDark ? <BiMoon size="24" /> : <BiSun size="24" />}
-        </Button>
-        <I18n />
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+		<NavbarItem>
+		  <ThemeSwitch />
+		  </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="gap-8 bg-white bg-opacity-20 pt-8 backdrop-blur-lg dark:bg-black dark:bg-opacity-20">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem
-            isActive={window.location.href.includes(item.href)}
-            key={`${item}-${index}`}
-            className="text-4xl"
-          >
-            <Link
-              className="flex w-full items-center justify-normal gap-4 text-4xl"
-              href={item.href}
-              size="lg"
-              onClick={() => {
-                setIsMenuOpen(false);
-              }}
-              color="foreground"
-            >
-              {item.icon}
-              {item.name}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
     </Nav>
   );
 }
