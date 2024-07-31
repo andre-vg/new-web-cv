@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "My name is",
+    "is": "& I am",
+    "adj": {
+      "1": "a Web Dev",
+      "2": "a Designer",
+      "3": "a Learner",
+      "4": "a Student",
+      "5": "an Enthusiast"
+    }
+  },
+  "time": {
+    "present": "Today"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "My story (so far)",
+    "education": {
+      "title": "Education",
+      "text": {
+        "1": "Graduated from",
+        "2": "Unified Teaching Center of Brasília",
+        "3": "with a Bachelor of Science in Computer Science. Proficient in Python and JavaScript. Experience in web development and project management."
+      }
+    },
+    "embrapa": {
+      "title": "Embrapa genetic resources",
+      "text": "Development of web applications for the management of research data and development of new species of plants for the Embrapa research data management system.",
+      "comp": {
+        "1": "Java",
+        "2": "MySQL",
+        "3": "JSP"
+      }
+    },
+    "icts": {
+      "title": "ICTS Group",
+      "text": "Development of web systems for internal project management.",
+      "comp": {
+        "1": "React",
+        "2": "NodeJS",
+        "3": "MariaDB",
+        "4": "ORM"
+      }
+    },
+    "rybena": {
+      "title": "Rybena Assistive Technologies",
+      "text": "Development of accessibility features for the web tool, maintenance and development of internal and client management systems.",
+      "comp": {
+        "1": "Vuejs",
+        "2": "Java (Spring Boot, Hibernate)",
+        "3": "Postgres",
+        "4": "Javascript (DOM, Singleton)"
+      }
+    }
+  },
+  "projetosPage": {
+    "title": "Projects",
+    "subtitle": "Here are some of my projects",
+    "topics": "Related topics"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "done": {
+      "title": "Thanks!",
+      "text": "Your message has been sent."
+    }
+  },
+  "footer": {
+    "title": " Developed by "
+  }
+}
