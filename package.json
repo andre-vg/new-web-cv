@@ -45,7 +45,8 @@
     "react": "18.3.1",
     "react-aiwriter": "^1.0.0",
     "react-dom": "18.3.1",
-    "sonner": "^1.5.0"
+    "sonner": "^1.5.0",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "20.5.7",

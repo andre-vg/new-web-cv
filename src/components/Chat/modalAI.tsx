@@ -12,7 +12,7 @@ import {
 import { Input } from '@nextui-org/input';
 import { ArrowRightIcon, Send } from 'lucide-react';
 import axios from 'axios';
-import AIWriter from 'react-aiwriter';
+import { TextEffect } from '../core/text-effect';
 
 export default function ModalAI() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -56,9 +56,9 @@ export default function ModalAI() {
                     </Button>
                   }
                 />
-                  <AIWriter>
-                    <p className="font-mono">{response}</p>
-                  </AIWriter>
+                <TextEffect per="word" as="p" preset="slide">
+                  {response}
+                </TextEffect>
               </ModalBody>
               <ModalFooter></ModalFooter>
             </>
