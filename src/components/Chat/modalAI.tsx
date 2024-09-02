@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@nextui-org/button';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Modal,
   ModalContent,
@@ -13,11 +13,16 @@ import { Input } from '@nextui-org/input';
 import { ArrowRightIcon, Send } from 'lucide-react';
 import axios from 'axios';
 import AIWriter from 'react-aiwriter';
+import en from '@/messages/en.json';
+import { useMessages } from 'next-intl';
 
 export default function ModalAI() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [question, setQuestion] = React.useState('');
   const [response, setResponse] = React.useState('');
+
+  const t = useMessages() as typeof en;
+
   return (
     <>
       <Button
@@ -27,16 +32,17 @@ export default function ModalAI() {
         color="primary"
         onPress={onOpen}
       >
-        aaaa
+        AI
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Modal Title
+                {t.ai.title}
               </ModalHeader>
               <ModalBody>
+                <p>{/* {t("text")} */}</p>
                 <Input
                   label="Digite sua pergunta"
                   placeholder="Quem é André??"
@@ -56,9 +62,9 @@ export default function ModalAI() {
                     </Button>
                   }
                 />
-                  <AIWriter>
-                    <p className="font-mono">{response}</p>
-                  </AIWriter>
+                <AIWriter>
+                  <p className="font-mono">{response}</p>
+                </AIWriter>
               </ModalBody>
               <ModalFooter></ModalFooter>
             </>

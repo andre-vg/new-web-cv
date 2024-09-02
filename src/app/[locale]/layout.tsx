@@ -9,6 +9,8 @@ import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
 import { Navbar } from '@/src/components/navbar';
 import ModalAI from '@/src/components/Chat/modalAI';
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider, useLocale, useMessages } from 'next-intl';
 
 export const metadata: Metadata = {
   title: {
@@ -33,6 +35,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const messages = useMessages();
+  const locale = useLocale();
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -48,7 +52,9 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">
               {children}
             </main>
-            <ModalAI />
+            <NextIntlClientProvider messages={messages} locale={locale}>
+              <ModalAI />
+            </NextIntlClientProvider>
             <footer className="flex w-full items-center justify-center py-3">
               <Link
                 isExternal

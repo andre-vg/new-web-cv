@@ -81,5 +81,9 @@
   },
   "footer": {
     "title": " Desenvolvido por "
+  },
+  "ai": {
+    "title": "IA de assistência",
+    "text": "Eu sou um assistente de IA, posso te ajudar com alguma coisa?"
   }
 }

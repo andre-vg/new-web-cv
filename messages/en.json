@@ -81,5 +81,10 @@
   },
   "footer": {
     "title": " Developed by "
+  },
+  "ai":{
+    "title": "AI of assistance",
+    "text": "I am an AI of assistance, I can help you with some questions, just ask me."
+    
   }
 }
