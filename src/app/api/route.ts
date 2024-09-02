@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
-import { template } from '@/utils/templateAI';
+import { template } from '@/lib/templateAI';
 
 async function main(question: string) {
   const prompt = ChatPromptTemplate.fromTemplate(template);
