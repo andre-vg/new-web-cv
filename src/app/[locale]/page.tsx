@@ -1,10 +1,11 @@
-import { useTranslations } from "next-intl";
+import AboutSection from '@/src/components/About/aboutSection';
+import HeroSection from '@/src/components/Hero/heroSection';
 
 export default function Home() {
-  const t = useTranslations('about');
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      {t('education.title')}
+    <section className="flex flex-col items-center justify-center">
+      <HeroSection />
+      <AboutSection />
     </section>
   );
 }

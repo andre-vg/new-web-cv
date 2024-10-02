@@ -9,8 +9,8 @@ import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
 import { Navbar } from '@/src/components/navbar';
 import ModalAI from '@/src/components/Chat/modalAI';
-import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider, useLocale, useMessages } from 'next-intl';
+import { DockNavBar } from '@/src/components/dockNavBar';
 
 export const metadata: Metadata = {
   title: {
@@ -38,7 +38,7 @@ export default function RootLayout({
   const messages = useMessages();
   const locale = useLocale();
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="pt" className="scroll-smooth">
       <head />
       <body
         className={clsx(
@@ -49,9 +49,8 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex h-screen flex-col">
             <Navbar />
-            <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">
-              {children}
-            </main>
+            <main className="flex-grow">{children}</main>
+            <DockNavBar />
             <NextIntlClientProvider messages={messages} locale={locale}>
               <ModalAI />
             </NextIntlClientProvider>
