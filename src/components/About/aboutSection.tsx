@@ -10,8 +10,6 @@ export default function AboutSection() {
   const isInView = useInView(ref);
 
   useEffect(() => {
-    console.log(isInView);
-
     if (isInView) {
       setInView('about');
     }

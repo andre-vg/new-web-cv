@@ -5,6 +5,7 @@ import { NextUIProvider } from '@nextui-org/system';
 import { useRouter } from 'next/navigation';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ThemeProviderProps } from 'next-themes/dist/types';
+import { rememberPallete } from '@/utils/pallete';
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -17,6 +18,9 @@ export const inViewContext = React.createContext(
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const [inView, setInView] = React.useState<string>('home');
+  React.useEffect(() => {
+    rememberPallete(localStorage.getItem('themeColor'));
+  }, []);
 
   const router = useRouter();
 

@@ -48,10 +48,10 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex h-screen flex-col">
-            <Navbar />
+            {/* <Navbar /> */}
             <main className="flex-grow">{children}</main>
-            <DockNavBar />
             <NextIntlClientProvider messages={messages} locale={locale}>
+              <DockNavBar />
               <ModalAI />
             </NextIntlClientProvider>
             <footer className="flex w-full items-center justify-center py-3">

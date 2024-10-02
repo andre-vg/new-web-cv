@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "settings": "Configurações"
   },
   "hero": {
     "greeting": "Meu nome é",

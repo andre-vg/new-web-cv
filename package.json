@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "format": "prettier --write ./src",
     "build": "next build",
     "start": "next start",
@@ -34,6 +34,7 @@
     "@react-aria/ssr": "3.9.4",
     "@react-aria/visually-hidden": "3.8.12",
     "axios": "^1.7.3",
+    "chroma-js": "^3.1.1",
     "clsx": "2.1.1",
     "framer-motion": "~11.1.1",
     "intl-messageformat": "^10.5.0",
@@ -44,12 +45,15 @@
     "next-themes": "^0.2.1",
     "react": "18.3.1",
     "react-aiwriter": "^1.0.0",
+    "react-colorful": "^5.6.1",
     "react-dom": "18.3.1",
     "sonner": "^1.5.0",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "theme-colors": "^0.1.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "@types/chroma-js": "^2.4.4",
     "@types/node": "20.5.7",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
