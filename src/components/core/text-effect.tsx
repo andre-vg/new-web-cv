@@ -107,25 +107,25 @@ const AnimationComponent: React.FC<{
 }> = React.memo(({ segment, variants, per, segmentWrapperClassName }) => {
   const content =
     per === 'line' ? (
-      <motion.span variants={variants} className='block'>
+      <motion.span variants={variants} className="block">
         {segment}
       </motion.span>
     ) : per === 'word' ? (
       <motion.span
-        aria-hidden='true'
+        aria-hidden="true"
         variants={variants}
-        className='inline-block whitespace-pre'
+        className="inline-block whitespace-pre"
       >
         {segment}
       </motion.span>
     ) : (
-      <motion.span className='inline-block whitespace-pre'>
+      <motion.span className="inline-block whitespace-pre">
         {segment.split('').map((char, charIndex) => (
           <motion.span
             key={`char-${charIndex}`}
-            aria-hidden='true'
+            aria-hidden="true"
             variants={variants}
-            className='inline-block whitespace-pre'
+            className="inline-block whitespace-pre"
           >
             {char}
           </motion.span>
@@ -196,12 +196,12 @@ export function TextEffect({
   };
 
   return (
-    <AnimatePresence mode='popLayout'>
+    <AnimatePresence mode="popLayout">
       {trigger && (
         <MotionTag
-          initial='hidden'
-          animate='visible'
-          exit='exit'
+          initial="hidden"
+          animate="visible"
+          exit="exit"
           aria-label={ariaLabel}
           variants={delayedContainerVariants}
           className={cn('whitespace-pre-wrap', className)}

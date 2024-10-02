@@ -6,10 +6,10 @@ import Typer from './typer';
 export default function HeroSection() {
   const t = useTranslations('hero');
   const adj = [t('adj.1'), t('adj.2'), t('adj.3'), t('adj.4'), t('adj.5')];
-  
+
   return (
     <div className="flex h-screen items-center justify-center gap-32" id="hero">
-      <div className="prose lg:prose-2xl dark:prose-invert prose-headings:m-0 prose-p:m-0">
+      <div className="prose dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0">
         <h3>{t('greeting')}</h3>
         <h1>André Gonçalves</h1>
         <div className="flex gap-1">

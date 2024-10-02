@@ -84,8 +84,8 @@ export default function AnimatedBackground({
             />
           )}
         </AnimatePresence>
-        <span className='z-10'>{child.props.children}</span>
-      </>
+        <span className="z-10">{child.props.children}</span>
+      </>,
     );
   });
 }

@@ -1,18 +1,18 @@
-import { Button } from "@nextui-org/button";
-import { Listbox, ListboxItem } from "@nextui-org/listbox";
-import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/popover";
-import React from "react";
-import { useRouter } from "../navigation";
+import { Button } from '@nextui-org/button';
+import { Listbox, ListboxItem } from '@nextui-org/listbox';
+import { Popover, PopoverTrigger, PopoverContent } from '@nextui-org/popover';
+import React from 'react';
+import { useRouter } from '../navigation';
 
 export default function LangSwitch() {
   const items = [
     {
-      key: "en",
-      label: "Ingles",
+      key: 'en',
+      label: 'Ingles',
     },
     {
-      key: "pt",
-      label: "Brasil",
+      key: 'pt',
+      label: 'Brasil',
     },
   ];
 
@@ -26,13 +26,13 @@ export default function LangSwitch() {
         <Listbox
           items={items}
           aria-label="Dynamic Actions"
-          onAction={(key: any) => router.replace("/", { locale: key })}
+          onAction={(key: any) => router.replace('/', { locale: key })}
         >
           {(item) => (
             <ListboxItem
               key={item.key}
-              color={item.key === "delete" ? "danger" : "default"}
-              className={item.key === "delete" ? "text-danger" : ""}
+              color={item.key === 'delete' ? 'danger' : 'default'}
+              className={item.key === 'delete' ? 'text-danger' : ''}
             >
               {item.label}
             </ListboxItem>

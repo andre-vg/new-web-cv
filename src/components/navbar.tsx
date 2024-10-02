@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -7,25 +7,25 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
-import React, { useState } from "react";
-import LangSwitch from "./lang-switch";
-import { ThemeSwitch } from "./theme-switch";
+} from '@nextui-org/navbar';
+import { Button } from '@nextui-org/button';
+import { Link } from '@nextui-org/link';
+import React, { useState } from 'react';
+import LangSwitch from './lang-switch';
+import { ThemeSwitch } from './theme-switch';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    'Profile',
+    'Dashboard',
+    'Activity',
+    'Deployments',
+    'My Settings',
+    'Team Settings',
+    'Help & Feedback',
+    'Log Out',
   ];
 
   return (
@@ -36,17 +36,17 @@ export const Navbar = () => {
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="pr-3 sm:hidden" justify="center">
         <NavbarBrand>
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarBrand>
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
@@ -88,10 +88,10 @@ export const Navbar = () => {
               className="w-full"
               color={
                 index === 2
-                  ? "warning"
+                  ? 'warning'
                   : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
+                    ? 'danger'
+                    : 'foreground'
               }
               href="#"
               size="lg"

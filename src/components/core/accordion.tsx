@@ -17,7 +17,7 @@ type AccordionContextType = {
 };
 
 const AccordionContext = createContext<AccordionContextType | undefined>(
-  undefined
+  undefined,
 );
 
 function useAccordion() {
@@ -62,7 +62,7 @@ function Accordion({
 }: AccordionProps) {
   return (
     <MotionConfig transition={transition}>
-      <div className={cn('relative', className)} aria-orientation='vertical'>
+      <div className={cn('relative', className)} aria-orientation="vertical">
         <AccordionProvider variants={variants}>{children}</AccordionProvider>
       </div>
     </MotionConfig>
@@ -88,7 +88,7 @@ function AccordionItem({ value, children, className }: AccordionItemProps) {
         React.cloneElement(child as React.ReactElement<any>, {
           expanded: isExpanded,
           onToggle: () => toggleItem(value),
-        })
+        }),
       )}
     </div>
   );
@@ -111,7 +111,7 @@ function AccordionTrigger({
     <button
       onClick={onToggle}
       aria-expanded={expanded}
-      type='button'
+      type="button"
       className={cn('group', className)}
       {...(expanded ? { 'data-expanded': '' } : {})}
     >
@@ -146,9 +146,9 @@ function AccordionContent({
     <AnimatePresence>
       {expanded && (
         <motion.div
-          initial='collapsed'
-          animate='expanded'
-          exit='collapsed'
+          initial="collapsed"
+          animate="expanded"
+          exit="collapsed"
           variants={combinedVariants}
           className={className}
         >
