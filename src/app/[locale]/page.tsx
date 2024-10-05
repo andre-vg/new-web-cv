@@ -1,5 +1,6 @@
 import AboutSection from '@/src/components/About/aboutSection';
 import HeroSection from '@/src/components/Hero/heroSection';
+import ProjectSection from '@/src/components/Projects/projectSection';
 import { NextIntlClientProvider, useLocale, useMessages } from 'next-intl';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <NextIntlClientProvider messages={messages} locale={locale}>
         <AboutSection />
       </NextIntlClientProvider>
+      <ProjectSection />
     </section>
   );
 }
