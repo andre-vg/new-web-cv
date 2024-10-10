@@ -11,8 +11,8 @@ export default function Home() {
       <HeroSection />
       <NextIntlClientProvider messages={messages} locale={locale}>
         <AboutSection />
+        <ProjectSection />
       </NextIntlClientProvider>
-      <ProjectSection />
     </section>
   );
 }

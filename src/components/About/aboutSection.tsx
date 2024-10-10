@@ -22,9 +22,9 @@ export default function AboutSection() {
   const messages: IntlMessages = useMessages();
 
   return (
-    <section className="h-screen w-full bg-foreground-100 flex justify-center items-center">
+    <section className="flex h-screen w-full items-center justify-center bg-foreground-100">
       <div
-        className="items-center justify-center gap-32 prose dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0 text-center"
+        className="prose items-center justify-center gap-32 text-center dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0"
         id="about"
       >
         <h2 ref={ref}>{messages.about.title}</h2>

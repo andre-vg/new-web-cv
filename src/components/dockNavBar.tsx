@@ -10,24 +10,31 @@ import {
   SunMoon,
 } from 'lucide-react';
 import { Dock, DockIcon, DockItem, DockLabel } from './core/dock';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { inViewContext } from '../app/[locale]/providers';
-import { useTheme } from 'next-themes';
-import { useMessages } from 'next-intl';
+import { useLocale, useMessages } from 'next-intl';
 import { useDisclosure } from '@nextui-org/modal';
 import dynamic from 'next/dynamic';
+import { useRouter } from '../navigation';
 const ModalConfig = dynamic(() => import('./layout/modalConfig'), {
   ssr: false,
 });
 
 export function DockNavBar() {
   const { inView } = useContext(inViewContext);
-  const { setTheme, theme, resolvedTheme } = useTheme();
+  const [flag, setFlag] = useState('BR');
   //@ts-ignore
   const messages: IntlMessages = useMessages();
   const { onOpen, onOpenChange, isOpen } = useDisclosure();
-
   const className = 'group-data-[isvisible=true]:!text-primary-200';
+
+  const locale = useLocale();
+
+  useEffect(() => {
+    locale.toString() === 'en' ? setFlag('US') : setFlag('BR');
+  }, [locale]);
+
+  const router = useRouter();
 
   const data = [
     {
@@ -41,18 +48,13 @@ export function DockNavBar() {
       href: '#about',
     },
     {
-      title: 'Components',
+      title: 'Projects',
       icon: <Component className={className} />,
-      href: '#',
+      href: '#projects',
     },
     {
       title: 'Activity',
       icon: <Activity className={className} />,
-      href: '#',
-    },
-    {
-      title: 'Change Log',
-      icon: <ScrollText className={className} />,
       href: '#',
     },
     {
@@ -61,10 +63,24 @@ export function DockNavBar() {
       href: '#',
     },
     {
-      title: messages.navbar.settings,
+      title: locale.toString(),
       icon: (
-        <Settings className="group-data-[isvisible=true]:!text-primary-500" />
+        <img
+          className="rounded-md"
+          src={`https://flagsapi.com/${flag}/flat/64.png`}
+          alt="Badeira do País"
+        />
       ),
+      href: '#',
+      onClick: () => {
+        router.replace('/', {
+          locale: locale.toString() === 'en' ? 'pt' : 'en',
+        });
+      },
+    },
+    {
+      title: messages.navbar.settings,
+      icon: <Settings />,
       onClick: () => {
         onOpen();
       },
@@ -97,7 +113,7 @@ export function DockNavBar() {
               isHighlighted={inView === item.href.split('#')[1]}
               className="group aspect-square rounded-full bg-gray-200 transition-colors duration-500 data-[isvisible=true]/root:!bg-primary-500 dark:bg-neutral-800"
             >
-              <DockLabel className='text-md'>{item.title}</DockLabel>
+              <DockLabel className="text-md">{item.title}</DockLabel>
               <DockIcon>{item.icon}</DockIcon>
             </DockItem>
           </button>

@@ -1,10 +1,7 @@
 'use client';
-import { CalendarIcon, FileTextIcon } from '@radix-ui/react-icons';
-import { BellIcon, Share2Icon } from 'lucide-react';
 import { BentoCard, BentoGrid as BG } from '@/components/ui/bento-grid';
 import { useQuery } from '@tanstack/react-query';
 import { Projeto } from '@/types';
-import { useEffect } from 'react';
 
 export function BentoGrid() {
   const { data } = useQuery({
@@ -43,7 +40,7 @@ export function BentoGrid() {
       href: project.html_url,
       className: getClassname(idx),
       cta: 'Saiba mais',
-      background: <img className="absolute -right-20 -top-20 opacity-60" />,
+      background: <img className="absolute -right-20 -top-20 opacity-60" alt="empty" />,
     };
   });
   
