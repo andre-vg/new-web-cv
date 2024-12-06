@@ -7,12 +7,12 @@ export default function Home() {
   const messages = useMessages();
   const locale = useLocale();
   return (
-    <section className="flex flex-col items-center justify-center">
+    <>
       <HeroSection />
       <NextIntlClientProvider messages={messages} locale={locale}>
         <AboutSection />
         <ProjectSection />
       </NextIntlClientProvider>
-    </section>
+    </>
   );
 }

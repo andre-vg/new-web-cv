@@ -10,19 +10,18 @@ export default function HeroSection() {
   const adj = [t('adj.1'), t('adj.2'), t('adj.3'), t('adj.4'), t('adj.5')];
 
   return (
-    <div className="flex h-screen items-center justify-center gap-32" id="hero">
-      <div className="prose dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0">
+    <div className="flex h-screen w-full items-center justify-center gap-16" id="hero">
+      <div className="prose prose-lg w-full lg:w-fit px-12 lg:px-0 dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0">
         <h3>{t('greeting')}</h3>
         <h1>André Gonçalves</h1>
         <div className="flex gap-1">
           <p>{t('is')}</p>
           <Typer adj={adj} />
         </div>
-        <div className="flex gap-4">
+        <div className="mt-4 flex flex-col gap-4 lg:flex-row">
           <Button
             variant="solid"
             color="primary"
-            size="lg"
             startContent={<LucideLinkedin strokeWidth={1.5} />}
             className="font-semibold decoration-transparent"
             href="https://www.linkedin.com/in/andr%C3%A9-gon%C3%A7alves-a74535163/"
@@ -31,12 +30,11 @@ export default function HeroSection() {
             LinkedIn
           </Button>
           <Button
-            as={"a"}
+            as={'a'}
             href="https://github.com/andre-vg"
             target="_blank"
             variant="ghost"
             color="primary"
-            size="lg"
             startContent={<Github strokeWidth={2} />}
             className="font-semibold decoration-transparent"
           >
@@ -47,7 +45,6 @@ export default function HeroSection() {
             target="_blank"
             variant="ghost"
             color="primary"
-            size="lg"
             startContent={<Download strokeWidth={2} />}
             className="font-semibold decoration-transparent"
           >
@@ -59,7 +56,7 @@ export default function HeroSection() {
         src="https://placehold.co/400x400.png"
         alt="André Gonçalves"
         classNames={{
-          img: 'rounded-full aspect-square object-cover hidden md:block max-h-1/4 max-w-1/4',
+          img: 'rounded-full aspect-square object-cover hidden lg:block max-h-1/4 max-w-1/4',
         }}
         removeWrapper
       />

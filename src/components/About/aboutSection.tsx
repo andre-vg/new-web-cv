@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { GithubIcon } from '../icons';
 import { useMessages } from 'next-intl';
+import Timeline from './timeline';
 
 export default function AboutSection() {
   const { setInView } = React.useContext(inViewContext);
@@ -29,6 +30,7 @@ export default function AboutSection() {
       >
         <h2 ref={ref}>{messages.about.title}</h2>
         <p>{messages.about.subtitle}</p>
+        
         {/* <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
         Circles
@@ -40,7 +42,9 @@ export default function AboutSection() {
         <GithubIcon />
         </OrbitingCircles>
         </div> */}
+        
       </div>
+      <Timeline/>
     </section>
   );
 }

@@ -47,12 +47,12 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <div className="relative flex h-screen flex-col">
+          <div className="block">
             {/* <Navbar /> */}
-            <main className="flex-grow">{children}</main>
+            <main className="w-full">{children}</main>
             <NextIntlClientProvider messages={messages} locale={locale}>
               <DockNavBar />
-              <ModalAI />
+              {/* <ModalAI /> */}
             </NextIntlClientProvider>
             <footer className="flex w-full items-center justify-center py-3">
               <Link
