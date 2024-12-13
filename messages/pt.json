@@ -42,7 +42,7 @@
     },
     "icts": {
       "title": "Grupo ICTS",
-      "text": "Desenvolvimento de sistemas web para gerenciamento de projetos internos da empresa.",
+      "text": "Desenvolvimento de sistemas web voltados para o gerenciamento e organização de projetos internos da empresa, com foco em otimização de processos e aumento da eficiência das equipes.",
       "comp": {
         "1": "React",
         "2": "NodeJS",

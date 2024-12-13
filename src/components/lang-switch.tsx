@@ -2,7 +2,7 @@ import { Button } from '@nextui-org/button';
 import { Listbox, ListboxItem } from '@nextui-org/listbox';
 import { Popover, PopoverTrigger, PopoverContent } from '@nextui-org/popover';
 import React from 'react';
-import { useRouter } from '../navigation';
+import { useRouter } from '../i18n/routing';
 
 export default function LangSwitch() {
   const items = [

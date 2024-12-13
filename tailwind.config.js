@@ -17,6 +17,9 @@ module.exports = {
       animation: {
         orbit: 'orbit calc(var(--duration)*1s) linear infinite',
       },
+      fontFamily: {
+        heading: ["Assistant", 'serif'],
+      },
       keyframes: {
         orbit: {
           '0%': {

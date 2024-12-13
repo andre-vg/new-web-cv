@@ -15,7 +15,7 @@ import { inViewContext } from '../app/[locale]/providers';
 import { useLocale, useMessages } from 'next-intl';
 import { useDisclosure } from '@nextui-org/modal';
 import dynamic from 'next/dynamic';
-import { useRouter } from '../navigation';
+import { useRouter } from '../i18n/routing';
 const ModalConfig = dynamic(() => import('./layout/modalConfig'), {
   ssr: false,
 });
@@ -26,7 +26,7 @@ export function DockNavBar() {
   //@ts-ignore
   const messages: IntlMessages = useMessages();
   const { onOpen, onOpenChange, isOpen } = useDisclosure();
-  const className = 'group-data-[isvisible=true]:!text-primary-200';
+  const className = 'group-data-[isvisible=true]:!text-primary-200 !text-default-600';
 
   const locale = useLocale();
 
@@ -66,7 +66,7 @@ export function DockNavBar() {
       title: locale.toString(),
       icon: (
         <img
-          className="rounded-md"
+          className="rounded-lg"
           src={`https://flagsapi.com/${flag}/flat/64.png`}
           alt="Badeira do País"
         />
@@ -80,7 +80,7 @@ export function DockNavBar() {
     },
     {
       title: messages.navbar.settings,
-      icon: <Settings />,
+      icon: <Settings className='!text-default-600' />,
       onClick: () => {
         onOpen();
       },
@@ -89,7 +89,7 @@ export function DockNavBar() {
   ];
   return (
     <div className="fixed bottom-4 left-1/2 z-50 max-w-full -translate-x-1/2">
-      <Dock className="items-end pb-3">
+      <Dock className="items-end pb-3 border border-primary-200 dark:border-primary-800">
         {data.map((item, idx) => (
           <button
             key={idx}
@@ -111,7 +111,7 @@ export function DockNavBar() {
           >
             <DockItem
               isHighlighted={inView === item.href.split('#')[1]}
-              className="group aspect-square rounded-full bg-gray-200 transition-colors duration-500 data-[isvisible=true]/root:!bg-primary-500 dark:bg-neutral-800"
+              className="group aspect-square rounded-full bg-gray-200 transition-colors duration-500 data-[isvisible=true]/root:!bg-primary-500  dark:bg-neutral-800"
             >
               <DockLabel className="text-md">{item.title}</DockLabel>
               <DockIcon>{item.icon}</DockIcon>

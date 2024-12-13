@@ -29,7 +29,7 @@ export default function Typer({ adj }: { adj: string[] }) {
 
   return (
     <div ref={ref}>
-      <TextEffect per="word" preset="blur">
+      <TextEffect per="word" preset="slide">
         {currentAdj}
       </TextEffect>
     </div>

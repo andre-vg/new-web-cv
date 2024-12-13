@@ -6,11 +6,13 @@ import clsx from 'clsx';
 import { Providers } from './providers';
 
 import { siteConfig } from '@/config/site';
-import { fontSans } from '@/config/fonts';
+import { fontHeading, fontSans } from '@/config/fonts';
 import { Navbar } from '@/src/components/navbar';
 import ModalAI from '@/src/components/Chat/modalAI';
 import { NextIntlClientProvider, useLocale, useMessages } from 'next-intl';
 import { DockNavBar } from '@/src/components/dockNavBar';
+import { routing } from '@/src/i18n/routing';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: {
@@ -32,17 +34,22 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
   const messages = useMessages();
-  const locale = useLocale();
   return (
     <html suppressHydrationWarning lang="pt" className="scroll-smooth">
       <head />
       <body
         className={clsx(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-background antialiased',
           fontSans.className,
         )}
       >

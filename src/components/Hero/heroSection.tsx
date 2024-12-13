@@ -4,17 +4,42 @@ import React from 'react';
 import Typer from './typer';
 import { Button } from '@nextui-org/button';
 import { Download, Github, LucideLinkedin } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { fontHeading } from '@/config/fonts';
+import { title } from '../primitives';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
   const adj = [t('adj.1'), t('adj.2'), t('adj.3'), t('adj.4'), t('adj.5')];
 
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-16" id="hero">
-      <div className="prose prose-lg w-full lg:w-fit px-12 lg:px-0 dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0">
-        <h3>{t('greeting')}</h3>
-        <h1>André Gonçalves</h1>
-        <div className="flex gap-1">
+    <div
+      className="flex h-screen w-full items-center justify-center gap-16"
+      id="hero"
+    >
+      <div
+        className={cn(
+          'prose prose-lg w-full px-12 dark:prose-invert lg:prose-2xl prose-headings:m-0 prose-p:m-0 lg:w-fit lg:px-0',
+        )}
+      >
+        <h3
+          className={cn(
+            title({ size: 'sm', className: 'font-semibold text-default-500' }),
+          )}
+        >
+          {t('greeting')}
+        </h3>
+        <h1 className={cn(title({ size: 'lg', color: 'primary' }))}>
+          André Gonçalves
+        </h1>
+        <div
+          className={cn(
+            title({
+              size: 'sm',
+              className: 'flex gap-1 !text-3xl font-medium text-default-400',
+            }),
+          )}
+        >
           <p>{t('is')}</p>
           <Typer adj={adj} />
         </div>

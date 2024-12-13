@@ -1,8 +1,12 @@
+import { fontHeading, fontMono } from '@/config/fonts';
 import { tv } from 'tailwind-variants';
 
 export const title = tv({
-  base: 'tracking-tight inline font-semibold',
+  base: 'tracking-tight font-bold text-default-800',
   variants: {
+    customFont: {
+      true: fontHeading.className,
+    },
     color: {
       violet: 'from-[#FF1CF7] to-[#b249f8]',
       yellow: 'from-[#FF705B] to-[#FFB457]',
@@ -11,8 +15,10 @@ export const title = tv({
       green: 'from-[#6FEE8D] to-[#17c964]',
       pink: 'from-[#FF72E1] to-[#F54C7A]',
       foreground: 'dark:from-[#FFFFFF] dark:to-[#4B4B4B]',
+      primary: 'from-primary-400 to-primary-600',
     },
     size: {
+      xs: 'text-2xl lg:text-3xl',
       sm: 'text-3xl lg:text-4xl',
       md: 'text-[2.3rem] lg:text-5xl leading-9',
       lg: 'text-4xl lg:text-6xl',
@@ -23,6 +29,7 @@ export const title = tv({
   },
   defaultVariants: {
     size: 'md',
+    customFont: true,
   },
   compoundVariants: [
     {
@@ -34,6 +41,7 @@ export const title = tv({
         'green',
         'pink',
         'foreground',
+        'primary',
       ],
       class: 'bg-clip-text text-transparent bg-gradient-to-b',
     },
@@ -41,7 +49,29 @@ export const title = tv({
 });
 
 export const subtitle = tv({
-  base: 'w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full',
+  base: 'w-full md:w-1/2 text-lg lg:text-xl block max-w-full text-pretty dark:prose-inverted prose text-default-600',
+  variants: {
+    fullWidth: {
+      true: '!w-full',
+    },
+    customFont: {
+      true: fontMono.className,
+    },
+    size: {
+      sm: 'text-xl lg:text-2xl',
+      md: 'text-2xl lg:text-3xl leading-9',
+      lg: 'text-3xl lg:text-4xl',
+    },
+  },
+  defaultVariants: {
+    fullWidth: true,
+    customFont: true,
+    size: 'md',
+  },
+});
+
+export const text = tv({
+  base: 'w-full md:w-1/2 my-2 text-lg lg:text-xl block max-w-full text-pretty dark:prose-inverted prose text-default-500 font-medium',
   variants: {
     fullWidth: {
       true: '!w-full',

@@ -1,8 +1,12 @@
 'use client';
-import { BentoCard, BentoGrid as BG } from '@/components/ui/bento-grid';
 import { useQuery } from '@tanstack/react-query';
 import { Projeto } from '@/types';
 import { Image } from '@nextui-org/image';
+import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card';
+import { AnimatedGroup } from '../core/animated-group';
+import { text, title } from '../primitives';
+import { cn } from '@/lib/utils';
+import { motion as m } from 'framer-motion';
 
 export function BentoGrid() {
   const { data } = useQuery({
@@ -41,15 +45,31 @@ export function BentoGrid() {
       href: project.html_url,
       className: getClassname(idx),
       cta: 'Saiba mais',
-      background: <Image removeWrapper alt="empty" src={`/projects/${project.name.toLowerCase()}.png`} />,
+      background: (
+        <Image
+          removeWrapper
+          alt="empty"
+          src={`/projects/${project.name.toLowerCase()}.png`}
+        />
+      ),
     };
   });
 
   return (
-    <BG className="not-prose text-left">
-      {projects.map((feature, idx) => (
-        <BentoCard key={idx} {...feature} />
-      ))}
-    </BG>
+    <AnimatedGroup
+      className="grid grid-cols-3 gap-4 p-8"
+      preset="scale"
+      childArray={
+        //sort by description length
+        data.sort((a: Projeto, b: Projeto) => {
+          if (a.description && b.description) {
+            return a.description.length - b.description.length;
+          }
+          return 0;
+        })
+      }
+    >
+      <></>
+    </AnimatedGroup>
   );
 }
