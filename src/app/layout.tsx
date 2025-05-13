@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { getLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -11,18 +13,24 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const locale = await getLocale();
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html
+      lang={locale}
+      className={`${geist.variable}`}
+      suppressHydrationWarning
+    >
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <NextIntlClientProvider locale={locale}>
+          {/* <TRPCReactProvider> */}
+          {children}
+          {/* </TRPCReactProvider> */}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
