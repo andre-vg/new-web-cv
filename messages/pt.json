@@ -1,5 +1,12 @@
 {
   "HomePage": {
     "title": "Olá mundo!"
+  },
+   "Navbar": {
+    "Home": "Inicio",
+    "About": "Sobre",
+    "Projects": "Projetos",
+    "Contact": "Contato",
+    "Theme": "Tema"
   }
 }
